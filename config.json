@@ -1,9 +1,0 @@
-{
-  "db":{
-    "host": "localhost",
-    "dbname": "simple_crud_dev",
-    "port": 27017,
-    "user": "",
-    "pwd": ""
-  }
-}
