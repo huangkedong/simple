@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  h2.todo-title Simple Todo List(CRUD Test)
+  if docs.length
+    ul.todo-list
+      li.todo-list-th 
+        span.t1 ID
+        span.t2 任务标题
+        span.t3 完成时长（小时）
+        span.t4 创建时间
+        span.t5 操作
+      for todo in docs
+        li.todo-list-item
+          span.t1 #{todo.id}
+          span.t2 #{todo.title}
+          span.t3 #{todo.finish_time}
+          span.t4 #{todo.create_date ? todo.create_date.toISOString().replace(/T/, ' ').replace(/\..+/, '').substr(0,11) + todo.create_date.toLocaleTimeString() : N/A}
+          span.t5 
+           a.btn(href="/detail/#{todo.id}") 进入编辑
+           a.btn(href="/del/#{todo.id}",onclick="var url='/del/#{todo.id}';if(confirm('确认删除？')){$(location).attr('href',url)}else{return false}") 删除
+  else
+    p.no-data 暂时没有数据
+
+
+  form#todoAddForm(method="POST",enctype="multipart/form-data", action="/add")
+    fieldset.todo-form-set
+      legend 新建任务
+      ul.tfs-ul
+        li 
+          input.inp-txt.t1(name="todo[title]",type="text",placeholder="任务标题")
+          input.inp-txt.t2(name="todo[finish_time]",type="number",placeholder="完成时长（小时）")
+          input.btn(type="submit",value="添加")
+          
