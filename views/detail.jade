@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  h2.todo-title Simple Todo List(CRUD Test)
+  
+  p
+    a(href="/") &lt;&lt;返回
+  if docs._id
+    - var todo = docs
+      form#todoUpdateForm(method="POST",enctype="multipart/form-data", action="/update/#{todo.id}")
+        ul.todo-list
+          li.todo-list-th 
+            span.t1 ID
+            span.t2 任务标题
+            span.t3 完成时长（小时）
+            span.t4 创建时间
+            span.t5 操作
+          
+            li.todo-list-item
+              span.t1 #{todo.id}
+              span.t2 
+                input.inp-txt(name="todo[title]",type="text",value="#{todo.title}")
+              span.t3 
+                input.inp-txt(name="todo[finish_time]",type="text",value="#{todo.finish_time}")
+              span.t4 #{todo.create_date ? todo.create_date.toISOString().replace(/T/, ' ').replace(/\..+/, '').substr(0,11) + todo.create_date.toLocaleTimeString() : N/A}
+              span.t5 
+                input.btn(type="submit",value="确认更新")
+  else
+    p.no-data 抱歉查询不到数据
+

@@ -1,0 +1,49 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+ul,li{margin:0;padding:0;list-style-type: none;}
+
+.no-data{border:1px solid #eee;text-align: center;margin-bottom:2em;padding:20px 8px;}
+.btn{display: inline-block;*display: inline;*zoom:1;line-height: 24px;height: 24px;background-color: #00b7ff;color: #fff;padding:0 8px;border:none;}
+.btn:hover{opacity:0.8;cursor:pointer;}
+.inp-txt{line-height:16px;height:16px;padding:4px;border:1px solid #ddd;margin-right:10px;
+	/* css3 box-shadow */
+	-webkit-box-shadow:inset 1px 2px 1px #eee;
+	   -moz-box-shadow:inset 1px 2px 1px #eee;
+	        box-shadow:inset 1px 2px 1px #eee;
+}
+
+.todo-list{min-width:980px;width:80%;border:1px solid #ccc;margin:0 0 2em;}
+	.todo-list li{overflow: hidden;*zoom:1;line-height:32px;border-bottom: 1px solid #ddd;padding:0 1em;}
+	.todo-list-th{color: #fff;font-size:14px;font-weight: bold;background-color: #333;height:48px;line-height:48px;}
+	.todo-list-th span{line-height: 48px;}
+	.todo-list li span{float:left;width:20%;overflow: hidden;zoom:1;}
+	.todo-list .t1{width:25%;}
+	.todo-list .t2{width:30%;}
+	.todo-list .t3{width:15%;}
+	.todo-list .t4{width:15%;}
+	.todo-list .t5{width:15%;}
+	
+	.todo-list .t5{float:right;}
+	.todo-list .t3,.todo-list .t4,.todo-list .t5{text-align: center;}
+	.todo-list .t5 a{margin:0 4px;}
+	.todo-list .t5 a:link,.todo-list .t5 a:visited{text-decoration: none;}
+	.todo-list .inp-txt{width:90%;}
+	.todo-list-item .t4{font-size:11px;}
+
+
+.todo-form-set{width:70%;border: 1px solid #ccc;border-radius:8px;}
+	.todo-form-set legend{font-weight:bold;color: #fff;padding:4px 8px;background-color: #333;border-radius:4px;}
+
+.tfs-ul{}
+	.tfs-ul input{vertical-align: middle;}
+	.tfs-ul .t1,.tfs-ul .t2{}
+	.tfs-ul .t1{width:300px;}
+	.tfs-ul .t2{width:100px;}
+	.tfs-ul .btn{}
