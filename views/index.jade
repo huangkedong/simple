@@ -20,7 +20,7 @@ block content
           span.t4 #{todo.create_date ? todo.create_date.toISOString().replace(/T/, ' ').replace(/\..+/, '').substr(0,11) + todo.create_date.toLocaleTimeString() : N/A}
           span.t5 
            a.btn(href="/detail/#{todo.id}") 进入编辑
-           a.btn(href="/del/#{todo.id}",onclick="var url='/del/#{todo.id}';if(confirm('确认删除？')){$(location).attr('href',url)}else{return false}") 删除
+           a.btn(href="/del/#{todo.id}",onclick="var url='/del/#{todo.id}';if(confirm('确认删除bykedP？')){$(location).attr('href',url)}else{return false}") 删除
   else
 
     p.no-data 暂时没有数据
